@@ -1,0 +1,56 @@
+body {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    height:100vh;
+    align-items:center;
+    margin:0;
+    background:#0c0d0d;
+    color:rgba(255, 255, 255, 0.664);
+    font-family: 'Raleway', sans-serif;
+    background-image:url("https://source.unsplash.com/1920x1080/?sunset")
+}
+
+input, button {
+    background-color:rgba(58, 58, 58, 0.664);
+    color:rgba(255, 255, 255, 0.664);
+    border:none;
+    height:2rem;
+    outline:none;
+    font-family:inherit;
+}
+
+button {
+    margin:0.5rem;
+    border-radius:50%;
+    width:2rem;
+    cursor:pointer;
+}
+
+button:hover {
+    background-color:rgba(85, 85, 85, 0.582);
+}
+
+button:active {
+    transform:scale(1.1);
+}
+
+input.search-bar {
+    border-radius:17px;
+    padding:0 0.5rem;
+    font-size:120%;
+}
+
+.container {
+    background:#111111e0;
+    padding:2rem;
+    border-radius:1rem;
+    width:min(300px, 100%);
+    margin:1rem;
+}
+
+.search {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
