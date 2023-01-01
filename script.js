@@ -1,5 +1,7 @@
 //const mylocation = document.querySelector("#mylocation");
 const body = document.querySelector("body");
+const advice = document.querySelector("#advice");
+const update = document.querySelector("#update");
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -40,9 +42,26 @@ let weather = {
         document.querySelector(".description").textContent = description;
         document.querySelector(".humidity").textContent = humidity + "%";
         document.querySelector(".wind").textContent = speed + "km/h";
+        if (speed >= 48 || temp < 0 || description == "Snow" || description == "Rain" || description == "Thunderstorm") {
+            advice.textContent = "Cycling is not recommended right now";
+        } else {
+            console.log("Safe");
+            let clothingadvice;
+            if (temp < 7) {
+                clothingadvice = "Wear a coat.";
+            } else if(temp < 16) {
+                clothingadvice = "Wear 2 layers of clothing or a long sleeve.";
+            } else {
+                clothingadvice = "You can wear a short sleeve."
+            }
+            advice.textContent = "It's safe to cycle. " + clothingadvice;
+        }
 
     }
 }
 
 getLocation();
+update.addEventListener("click", function() {
+    weather.fetchWeather();
+})
 //Why does weather.fetchWeather() only work through console and not here?
