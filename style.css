@@ -54,3 +54,12 @@ input.search-bar {
     align-items:center;
     justify-content:center;
 }
+
+.flex {
+    display:flex;
+    align-items:center;
+}
+
+h1{
+    margin:5px;
+}

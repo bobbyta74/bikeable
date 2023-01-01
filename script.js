@@ -1,4 +1,5 @@
 //const mylocation = document.querySelector("#mylocation");
+const body = document.querySelector("body");
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -31,7 +32,8 @@ let weather = {
         description = description[0].toUpperCase() + description.substr(1);
         const{temp, humidity} = data.main;
         const{speed} = data.wind;
-        console.log(name, icon, description, temp, humidity, speed); 
+        console.log(name, icon, description, temp, humidity, speed);
+        body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')";
         document.querySelector(".city").textContent = "Weather in " + name;
         document.querySelector(".temp").textContent = String(temp) + "°C";
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
