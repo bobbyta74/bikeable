@@ -45,3 +45,4 @@ let weather = {
 }
 
 getLocation();
+//Why does weather.fetchWeather() only work through console and not here?
